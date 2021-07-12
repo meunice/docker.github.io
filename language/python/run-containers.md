@@ -31,7 +31,7 @@ $ curl localhost:5000
 curl: (7) Failed to connect to localhost port 5000: Connection refused
 ```
 
-As you can see, our `curl` command failed because the connection to our server was refused. This means, we were not able to connect to the localhost on port 5000. This is expected because our container is run in isolation which includes networking. Let’s stop the container and restart with port 5000 published on our local network.
+As you can see, our `curl` command failed because the connection to our server was refused. This means, we were not able to connect to the localhost on port 5000. This is expected because our container is running in isolation which includes networking. Let’s stop the container and restart with port 5000 published on our local network.
 
 To stop the container, press ctrl-c. This will return you to the terminal prompt.
 
@@ -50,7 +50,7 @@ $ curl localhost:5000
 Hello, Docker!
 ```
 
-Success! We were able to connect to the application running inside of our container on port 5000. Switch back to the terminal where your container is running and you should see the POST request logged to the console.
+Success! We were able to connect to the application running inside of our container on port 5000. Switch back to the terminal where your container is running and you should see the GET request logged to the console.
 
 ```shell
 [31/Jan/2021 23:39:31] "GET / HTTP/1.1" 200 -

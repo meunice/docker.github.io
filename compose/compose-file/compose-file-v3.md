@@ -654,7 +654,6 @@ services:
 >   starting `web` - only until they have been started. If you need to wait
 >   for a service to be ready, see [Controlling startup order](../startup-order.md)
 >   for more on this problem and strategies for solving it.
-> - Version 3 no longer supports the `condition` form of `depends_on`.
 > - The `depends_on` option is ignored when
 >   [deploying a stack in swarm mode](../../engine/reference/commandline/stack_deploy.md)
 >   with a version 3 Compose file.
@@ -1641,6 +1640,10 @@ Expose ports.
 >
 > Port mapping is incompatible with `network_mode: host`
 
+> **Note**
+>
+> `docker-compose run` ignores `ports` unless you include `--service-ports`.
+
 #### Short syntax
 
 There are three options: 
@@ -1664,7 +1667,7 @@ ports:
   - "49100:22"
   - "127.0.0.1:8001:8001"
   - "127.0.0.1:5000-5010:5000-5010"
-  - "127.0.0.1::5000
+  - "127.0.0.1::5000"
   - "6060:6060/udp"
   - "12400-12500:1240"
 ```

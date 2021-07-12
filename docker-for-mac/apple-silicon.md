@@ -12,13 +12,11 @@ Docker Desktop for Mac on Apple silicon is now available as a GA release. This e
 
 Docker Desktop for Apple silicon also supports multi-platform images, which allows you to build and run images for both x86 and ARM architectures without having to set up a complex cross-compilation development environment. Additionally, you can use [docker buildx](../engine/reference/commandline/buildx.md){:target="_blank" rel="noopener" class="_"} to seamlessly integrate multi-platform builds into your build pipeline, and use [Docker Hub](https://hub.docker.com/){:target="_blank" rel="noopener" class="_"} to identify and share repositories that provide multi-platform images.
 
-## Docker Desktop 3.3.1
-
-2021-04-15
-
-Click the following link to download Docker Desktop.
+Download Docker Desktop for Mac on Apple silicon:
 
 [Download](https://desktop.docker.com/mac/stable/arm64/Docker.dmg?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-mac-arm64){: .button .primary-btn}
+
+{% include eula.md %}
 
 <br>
 
@@ -26,7 +24,7 @@ Click the following link to download Docker Desktop.
 
 You must install **Rosetta 2** as some binaries are still Darwin/AMD64. To install Rosetta 2 manually from the command line, run the following command:
 
-```
+```shell
 softwareupdate --install-rosetta
 ```
 
@@ -36,9 +34,9 @@ We expect to fix this in a future release.
 
 - Not all images are available for ARM64 architecture. You can add `--platform linux/amd64` to run an Intel image under emulation. In particular, the [mysql](https://hub.docker.com/_/mysql?tab=tags&page=1&ordering=last_updated) image is not available for ARM64. You can work around this issue by using a [mariadb](https://hub.docker.com/_/mariadb?tab=tags&page=1&ordering=last_updated) image.
 
-   However, attempts to run Intel-based containers on Apple Silicon machines can crash as QEMU sometimes fails to run the container. Filesystem change notification APIs (e.g. `inotify`) do not work under QEMU emulation, see [docker/for-mac#5321](https://github.com/docker/for-mac/issues/5321). Therefore, we recommend that you run ARM64 containers on Apple Silicon machines. These containers are also faster and use less memory than Intel-based containers.
+   However, attempts to run Intel-based containers on Apple Silicon machines under emulation can crash as qemu sometimes fails to run the container. In addition, filesystem change notification APIs (`inotify`) do not work under qemu emulation. Even when the containers do run correctly under emulation, they will be slower and use more memory than the native equivalent.
 
-   We expect this issue to become less common over time, as more and more images are rebuilt [supporting multiple architectures](https://www.docker.com/blog/multi-arch-build-and-images-the-simple-way/).
+   In summary, running Intel-based containers on Arm-based machines should be regarded as "best effort" only. We recommend running arm64 containers on Apple Silicon machines whenever possible, and encouraging container authors to produce arm64, or multi-arch, versions of their containers. We expect this issue to become less common over time, as more and more images are rebuilt [supporting multiple architectures](https://www.docker.com/blog/multi-arch-build-and-images-the-simple-way/).
 - `ping` from inside a container to the Internet does not work as expected.  To test the network, we recommend using `curl` or `wget`. See [docker/for-mac#5322](https://github.com/docker/for-mac/issues/5322#issuecomment-809392861).
 - Users may occasionally experience data drop when a TCP stream is half-closed.
 
@@ -71,6 +69,6 @@ We expect to fix this in a future release.
 
 ## Feedback
 
-Your feedback is important to us. Let us know your feedback by creating an issue in the [Docker Desktop for Mac GitHub](https://github.com/docker/for-mac/issues)repository.
+Your feedback is important to us. Let us know your feedback by creating an issue in the [Docker Desktop for Mac GitHub](https://github.com/docker/for-mac/issues) repository.
 
 We also recommend that you join the [Docker Community Slack](https://www.docker.com/docker-community) and ask questions in **#docker-desktop-mac** channel.

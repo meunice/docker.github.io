@@ -24,7 +24,6 @@ WORKDIR /myapp
 COPY Gemfile /myapp/Gemfile
 COPY Gemfile.lock /myapp/Gemfile.lock
 RUN bundle install
-COPY ../compose /myapp
 
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/
@@ -41,13 +40,12 @@ with Ruby, Bundler and all your dependencies inside it. For more information on
 how to write Dockerfiles, see the [Docker user guide](../get-started/index.md)
 and the [Dockerfile reference](/engine/reference/builder/).
 
-Next, create a bootstrap `Gemfile` which just loads Rails. It'll be overwritten
-in a moment by `rails new`.
+Next, open an editor and create a bootstrap `Gemfile` which just loads Rails. This will be overwritten in a moment by `rails new`.
 
     source 'https://rubygems.org'
     gem 'rails', '~>5'
 
-Create an empty `Gemfile.lock` to build our `Dockerfile`.
+Create an empty `Gemfile.lock` file to build our `Dockerfile`.
 
 ```console
 $ touch Gemfile.lock

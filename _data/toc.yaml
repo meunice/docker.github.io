@@ -7,7 +7,7 @@ horizontalnav:
   path: /get-started/overview/
   node: guides
 - title: Product manuals
-  path: /engine/
+  path: /desktop/
   node: manuals
 - title: Reference
   path: /reference/
@@ -85,6 +85,34 @@ guides:
     section:
     - title: "Overview"
       path: /language/java/
+    - title: "Build images"
+      path: /language/java/build-images/
+    - title: "Run containers"
+      path: /language/java/run-containers/
+    - title: "Develop your app"
+      path: /language/java/develop/
+    - title: "Run your tests"
+      path: /language/java/run-tests/
+    - title: "Configure CI/CD"
+      path: /language/java/configure-ci-cd/
+    - title: "Deploy your app"
+      path: /language/java/deploy/
+  - sectiontitle: Go
+    section:
+    - title: "Overview"
+      path: /language/golang/
+    - title: "Build images"
+      path: /language/golang/build-images/
+    - title: "Run containers"
+      path: /language/golang/run-containers/
+    - title: "Develop your app"
+      path: /language/golang/develop/
+    - title: "Run your tests"
+      path: /language/golang/run-tests/
+    - title: "Configure CI/CD"
+      path: /language/golang/configure-ci-cd/
+    - title: "Deploy your app"
+      path: /language/golang/deploy/
 - sectiontitle: Develop with Docker
   section:
   - path: /develop/
@@ -103,6 +131,8 @@ guides:
       title: Manage images
     - path: /develop/develop-images/baseimages/
       title: Create your own base image (advanced)
+  - path: /develop/scan-images/
+    title: Scan images
 - sectiontitle: Set up CI/CD
   section:
   - path: /ci-cd/best-practices/
@@ -315,6 +345,8 @@ guides:
       title: Use overlay networks
     - path: /network/host/
       title: Use host networking
+    - path: /network/ipvlan/
+      title: Use IPvlan networks
     - path: /network/macvlan/
       title: Use Macvlan networks
     - path: /network/none/
@@ -384,6 +416,8 @@ guides:
 - path: /docsarchive/
   title: Documentation archive
 reference:
+- path: /reference/
+  title: Reference documentation
 - sectiontitle: Command-line reference
   section:
   - sectiontitle: Docker CLI (docker)
@@ -410,16 +444,12 @@ reference:
           title: docker app install
         - path: /engine/reference/commandline/app_list/
           title: docker app list
-        - path: /engine/reference/commandline/app_merge/
-          title: docker app merge
         - path: /engine/reference/commandline/app_pull/
           title: docker app pull
         - path: /engine/reference/commandline/app_push/
           title: docker app push
         - path: /engine/reference/commandline/app_render/
           title: docker app render
-        - path: /engine/reference/commandline/app_split/
-          title: docker app split
         - path: /engine/reference/commandline/app_status/
           title: docker app status
         - path: /engine/reference/commandline/app_uninstall/
@@ -784,24 +814,6 @@ reference:
       title: docker pull
     - path: /engine/reference/commandline/push/
       title: docker push
-    - sectiontitle: docker registry
-      section:
-        - path: /engine/reference/commandline/registry/
-          title: docker registry
-        - path: /engine/reference/commandline/registry_events/
-          title: docker registry events
-        - path: /engine/reference/commandline/registry_history/
-          title: docker registry history
-        - path: /engine/reference/commandline/registry_info/
-          title: docker registry info
-        - path: /engine/reference/commandline/registry_inspect/
-          title: docker registry inspect
-        - path: /engine/reference/commandline/registry_joblogs/
-          title: docker registry joblogs
-        - path: /engine/reference/commandline/registry_ls/
-          title: docker registry ls
-        - path: /engine/reference/commandline/registry_rmi/
-          title: docker registry rmi
     - path: /engine/reference/commandline/rename/
       title: docker rename
     - path: /engine/reference/commandline/restart/
@@ -856,6 +868,8 @@ reference:
         title: docker stack
       - path: /engine/reference/commandline/stack_deploy/
         title: docker stack deploy
+      - path: /engine/reference/commandline/stack_ls/
+        title: docker stack ls
       - path: /engine/reference/commandline/stack_ps/
         title: docker stack ps
       - path: /engine/reference/commandline/stack_rm/
@@ -1132,12 +1146,12 @@ reference:
 
 
 samples:
+- path: /samples/
+  title: Samples overview
 - path: /samples/#tutorial-labs
   title: Tutorial labs
 - sectiontitle: Sample applications
   section:
-  - path: /samples/
-    title: Samples home
   - path: /samples/apt-cacher-ng/
     title: apt-cacher-ng
   - path: /samples/dotnetcore/
@@ -1156,12 +1170,63 @@ samples:
     title: Rails and PostgreSQL
   - path: /samples/running_riak_service/
     title: Riak
-  - path: /samples/running_ssh_service/
-    title: SSHd
 - path: /samples/#library-references
   title: Library references
 
 manuals:
+- sectiontitle: Docker Desktop
+  section:
+    - path: /desktop/
+      title: Overview
+    - sectiontitle: Mac
+      section:
+        - path: /docker-for-mac/install/
+          title: Install Docker Desktop for Mac
+        - path: /docker-for-mac/
+          title: User manual
+        - path: /docker-for-mac/networking/
+          title: Networking
+        - path: /docker-for-mac/space/
+          title: Disk utilization
+        - path: /docker-for-mac/troubleshoot/
+          title: Logs and troubleshooting
+        - path: /docker-for-mac/apple-silicon/
+          title: Apple silicon
+        - path: /docker-for-mac/release-notes/
+          title: Release notes
+        - path: /docker-for-mac/previous-versions/
+          title: Previous versions
+    - sectiontitle: Windows
+      section:
+        - path: /docker-for-windows/install/
+          title: Install Docker Desktop for Windows
+        - path: /docker-for-windows/
+          title: User manual
+        - path: /docker-for-windows/networking/
+          title: Networking
+        - path: /docker-for-windows/troubleshoot/
+          title: Logs and troubleshooting
+        - path: /docker-for-windows/wsl/
+          title: Docker Desktop WSL 2 backend
+        - path: /docker-for-windows/release-notes/
+          title: Release notes
+        - path: /docker-for-windows/previous-versions/
+          title: Previous versions
+    - path: /desktop/dashboard/
+      title: Dashboard
+    - path: /desktop/dev-environments/
+      title: Dev Environments (Preview)
+    - path: /desktop/multi-arch/
+      title: Multi-arch support
+    - path: /desktop/kubernetes/
+      title: Deploy on Kubernetes
+    - path: /desktop/faqs/
+      title: FAQs
+    - path: /desktop/backup-and-restore/
+      title: Back up and restore data
+    - path: /desktop/opensource/
+      title: Open source licensing
+
 - sectiontitle: Docker Engine
   section:
   - path: /engine/
@@ -1225,8 +1290,6 @@ manuals:
   - path: /engine/deprecated/
     title: Deprecated features
 
-  - path: /app/working-with-app/
-    title: Docker App
   - path: /buildx/working-with-buildx/
     title: Docker Buildx
   - path: /engine/context/working-with-contexts/
@@ -1238,12 +1301,12 @@ manuals:
   section:
   - path: /compose/
     title: Overview of Docker Compose
-  - sectiontitle: Compose CLI Tech Preview
+  - sectiontitle: Compose V2
     section:
     - path: /compose/cli-command/
       title: Overview
     - path: /compose/cli-command-compatibility/
-      title: Compose CLI compatibility
+      title: Compose v2 compatibility
   - path: /compose/install/
     title: Install Compose
   - path: /compose/gettingstarted/
@@ -1268,52 +1331,7 @@ manuals:
     title: Sample apps with Compose
   - path: /compose/release-notes/
     title: Release notes
-- sectiontitle: Docker Desktop
-  section:
-  - path: /desktop/
-    title: Overview
-  - sectiontitle: Mac
-    section:
-    - path: /docker-for-mac/install/
-      title: Install Docker Desktop for Mac
-    - path: /docker-for-mac/
-      title: User manual
-    - path: /docker-for-mac/multi-arch/
-      title: Leveraging Multi-CPU architecture support
-    - path: /docker-for-mac/networking/
-      title: Networking
-    - path: /docker-for-mac/space/
-      title: Disk utilization
-    - path: /docker-for-mac/troubleshoot/
-      title: Logs and troubleshooting
-    - path: /docker-for-mac/release-notes/
-      title: Release notes
-    - path: /docker-for-mac/apple-silicon/
-      title: Apple silicon
-  - sectiontitle: Windows
-    section:
-    - path: /docker-for-windows/install/
-      title: Install Docker Desktop for Windows
-    - path: /docker-for-windows/
-      title: User manual
-    - path: /docker-for-windows/networking/
-      title: Networking
-    - path: /docker-for-windows/troubleshoot/
-      title: Logs and troubleshooting
-    - path: /docker-for-windows/release-notes/
-      title: Release notes
-    - path: /docker-for-windows/wsl/
-      title: Docker Desktop WSL 2 backend
-  - path: /desktop/dashboard/
-    title: Dashboard
-  - path: /desktop/kubernetes/
-    title: Deploy on Kubernetes
-  - path: /desktop/faqs/
-    title: FAQs
-  - path: /desktop/backup-and-restore/
-    title: Back up and restore data
-  - path: /desktop/opensource/
-    title: Open source licensing
+
 - sectiontitle: Docker Hub
   section:
   - path: /docker-hub/
@@ -1322,6 +1340,8 @@ manuals:
     title: Docker ID accounts
   - path: /docker-hub/repos/
     title: Repositories
+  - path: /docker-hub/service-accounts/
+    title: Service accounts
   - path: /docker-hub/official_images/
     title: Official images
   - sectiontitle: Automated builds
@@ -1382,50 +1402,12 @@ manuals:
       title: Remove seats
     - path: /docker-hub/billing/faq/
       title: Pricing FAQs
-  - sectiontitle: Publisher & certified content
-    section:
-    - path: /docker-hub/publish/
-      title: Overview
-    - path: /docker-hub/publish/publish/
-      title: Submit a product for Docker Hub
-    - path: /docker-hub/publish/customer_faq/
-      title: User FAQs
-    - path: /docker-hub/publish/publisher_faq/
-      title: Publisher FAQs
-    - path: /docker-hub/publish/certify-images/
-      title: Certify images & plugins
-    - path: /docker-hub/publish/certify-plugins-logging/
-      title: Certify logging plugins
-    - path: /docker-hub/publish/trustchain/
-      title: Trust chain
-    - path: /docker-hub/publish/byol/
-      title: Bring Your Own License (BYOL)
+  - path: /docker-hub/publish/
+    title: Verified Publisher Program
   - path: /docker-hub/release-notes/
     title: Release notes
 - sectiontitle: Open-source projects
   section:
-  - sectiontitle: Notary
-    section:
-    - path: /notary/getting_started/
-      title: Get started with Notary
-    - path: /notary/advanced_usage/
-      title: Use the Notary client
-    - path: /notary/service_architecture/
-      title: Understand the service architecture
-    - path: /notary/running_a_service/
-      title: Run a Notary service
-    - path: /notary/changelog/
-      title: Notary changelog
-    - sectiontitle: Configuration files
-      section:
-      - path: /notary/reference/server-config/
-        title: Server configuration
-      - path: /notary/reference/signer-config/
-        title: Signer configuration
-      - path: /notary/reference/client-config/
-        title: Client configuration
-      - path: /notary/reference/common-configs/
-        title: Common Server and signer configurations
   - sectiontitle: Docker Registry
     section:
     - path: /registry/
@@ -1568,7 +1550,7 @@ manuals:
           title: VMware vSphere
       - path: /machine/migrate-to-machine/
         title: Migrate from Boot2Docker to Machine
-  - path: /docker-for-windows/docker-toolbox/
+  - path: /toolbox/
     title: Docker Toolbox (deprecated)
   - sectiontitle: Kitematic
     section:
@@ -1584,6 +1566,3 @@ manuals:
       title: Frequently asked questions
     - path: /kitematic/known-issues/
       title: Known issues
-    - path: /toolbox/faqs/troubleshoot/
-      title: Troubleshooting
-      nosync: true

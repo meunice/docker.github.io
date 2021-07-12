@@ -5,8 +5,9 @@ title: Docker Billing overview
 ---
 
 On May 14, 2020, Docker announced a new, per-seat pricing model that aligns with Docker’s [product strategy](https://www.docker.com/blog/docker-strategy-helping-devs-build-and-ship-faster/){: target="_blank" rel="noopener" class="_"} to accelerate developer workflows for cloud-native development. The previous private repository/parallel autobuild-based plans have been replaced with new **Pro** and **Team** subscriptions that include unlimited private repositories and up to 50,000 container pulls in a 24-hour period.
+Starting with May 14, 2020, new customers who sign up for Docker can choose between the new Free, Pro, and Team plans.
 
-Existing Docker customers subscribed to a paid plan before May 14, 2020 must upgrade to the new Pro or Team plan by January 31, 2021. Starting with May 14, 2020, new customers who sign up for Docker can choose between the new Free, Pro, and Team plans.
+Existing Docker customers who had subscribed to a paid plan before May 14, 2020 have been converted to the new Pro or Team plan after January 31, 2021. 
 
 ## Pricing plans
 
@@ -14,7 +15,7 @@ Docker offers pricing plans that are tailored for individual developers and deve
 
 **For individuals:**
 
-The **Pro** plan includes unlimited public repositories, unlimited private repositories, unlimited [collaborators](../repos.md#collaborators-and-their-role) for public repositories, one [service account](../repos.md#service-accounts) for private repositories, and 2 parallel builds, starting at $5 per month with the annual subscription.
+The **Pro** plan includes unlimited public repositories, unlimited private repositories, unlimited [collaborators](../repos.md#collaborators-and-their-role) for public repositories, one [service account](../repos.md#service-accounts) for private repositories, autobuilds with 5 parallel builds, starting at $5 per month with the annual subscription.
 
 > **Note**
 >
@@ -24,7 +25,7 @@ The **Free** plan includes unlimited public repositories and unlimited collabora
 
 **For development teams:**
 
-The **Team** plan includes unlimited public and unlimited private repositories starting at $25 per month for the first 5 users and $7 per month for each user thereafter with the annual subscription. In addition, the Team plan offers 3 parallel builds, advanced collaboration and management tools, including organization and team management with role-based access controls for the whole team.
+The **Team** plan includes unlimited public and unlimited private repositories starting at $25 per month for the first 5 users and $7 per month for each user thereafter with the annual subscription. In addition, the Team plan offers autobuilds with 15 parallel builds, advanced collaboration and management tools, including organization and team management with role-based access controls for the whole team.
 
 The **Free Team** plan includes unlimited public repositories at no cost per month. This plan also offers advanced collaboration and management tools, including organization and team management with role-based access controls which are limited to 1 team and 3 team members.
 
@@ -34,7 +35,7 @@ For frequently asked questions about pricing, see [Docker pricing FAQ](https://w
 
 ### Purchase a Pro plan
 
-The following section contains information on how to purchase a Pro plan for new customers. If you are already subscribed to a legacy plan and would like to upgrade to Pro, see [Upgrade to Pro from a legacy plan](upgrade.md#upgrade-to-a-pro-plan).
+The following section contains information on how to purchase a Pro plan for new customers.
 
 To purchase a Pro plan:
 
@@ -56,7 +57,7 @@ To purchase a Pro plan:
 
 ### Purchase a Team plan
 
-The following section contains information on how to purchase a Team plan for new organizations. If you are already subscribed to a legacy plan and would like to upgrade to the Team plan, see [Upgrade to Team from a legacy plan](upgrade.md#upgrade-to-a-team-plan).
+The following section contains information on how to purchase a Team plan for new organizations.
 
 To purchase a Team plan:
 

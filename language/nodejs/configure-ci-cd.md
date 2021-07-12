@@ -17,7 +17,7 @@ This guide contains instructions on how to:
 
 ## Set up a Docker project
 
-Let’s get started. This guide uses a simple Docker project as an example. The [SimpleWhaleDemo](https://github.com/usha-mandya/SimpleWhaleDemo){:target="_blank" rel="noopener" class="_"} repository contains an Ngnix alpine image. You can either clone this repository, or use your own Docker project.
+Let’s get started. This guide uses a simple Docker project as an example. The [SimpleWhaleDemo](https://github.com/usha-mandya/SimpleWhaleDemo){:target="_blank" rel="noopener" class="_"} repository contains an Nginx alpine image. You can either clone this repository, or use your own Docker project.
 
 ![SimpleWhaleDemo](../../ci-cd/images/simplewhaledemo.png){:width="500px"}
 
@@ -209,7 +209,7 @@ Next, change your Docker Hub login to a GitHub container registry login:
         if: github.event_name != 'pull_request'
         uses: docker/login-action@v1
         with:
-        registry: ghcr.io
+          registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GHCR_TOKEN }}
 ```

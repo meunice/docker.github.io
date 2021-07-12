@@ -2,13 +2,16 @@
 description: Instructions for installing Docker Engine on Ubuntu
 keywords: requirements, apt, installation, ubuntu, install, uninstall, upgrade, update
 redirect_from:
-- /engine/installation/ubuntulinux/
-- /installation/ubuntulinux/
+- /ee/docker-ee/ubuntu/
+- /engine/installation/linux/docker-ce/ubuntu/
+- /engine/installation/linux/docker-ee/ubuntu/
 - /engine/installation/linux/ubuntu/
 - /engine/installation/linux/ubuntulinux/
-- /engine/installation/linux/docker-ce/ubuntu/
-- /install/linux/ubuntu/
+- /engine/installation/ubuntulinux/
 - /install/linux/docker-ce/ubuntu/
+- /install/linux/docker-ee/ubuntu/
+- /install/linux/ubuntu/
+- /installation/ubuntulinux/
 title: Install Docker Engine on Ubuntu
 toc_max: 4
 ---
@@ -28,9 +31,17 @@ versions:
 - Ubuntu Groovy 20.10
 - Ubuntu Focal 20.04 (LTS)
 - Ubuntu Bionic 18.04 (LTS)
-- Ubuntu Xenial 16.04 (LTS)
 
 Docker Engine is supported on `x86_64` (or `amd64`), `armhf`, and `arm64` architectures.
+
+> Ubuntu 16.04 LTS "Xenial Xerus" end-of-life
+> 
+> Ubuntu Linux 16.04 LTS reached the end of its five-year LTS window on April
+> 30th 2021 and is no longer supported. Docker no longer releases packages for
+> this distribution (including patch- and security releases). Users running
+> Docker on Ubuntu 16.04 are recommended to update their system to a currently
+> supported LTS version of Ubuntu.
+{: .important }
 
 ### Uninstall old versions
 

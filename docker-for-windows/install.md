@@ -3,7 +3,12 @@ description: How to install Docker Desktop for Windows
 keywords: windows, install, download, run, docker, local
 title: Install Docker Desktop on Windows
 redirect_from:
+- /docker-ee-for-windows/install/
 - /docker-for-windows/install-windows-home/
+- /ee/docker-ee/windows/docker-ee/
+- /engine/installation/windows/docker-ee/
+- /install/windows/docker-ee/
+- /install/windows/ee-preview/
 ---
 
 Welcome to Docker Desktop for Windows. This page contains information about Docker Desktop for Windows system requirements, download URL, installation instructions, and automatic updates.
@@ -11,7 +16,7 @@ Welcome to Docker Desktop for Windows. This page contains information about Dock
 [Docker Desktop for Windows](https://desktop.docker.com/win/stable/amd64/Docker%20Desktop%20Installer.exe){:
 .button .primary-btn}
 
-By downloading Docker Desktop, you agree to the terms of the [Docker Software End User License Agreement](https://www.docker.com/legal/docker-software-end-user-license-agreement){: target="_blank" rel="noopener" class="_"} and the [Docker Data Processing Agreement](https://www.docker.com/legal/data-processing-agreement){: target="_blank" rel="noopener" class="_"}.
+{% include eula.md %}
 
 ## System requirements
 
@@ -26,7 +31,7 @@ Your Windows machine must meet the following requirements to successfully instal
 
 ### WSL 2 backend
 
-- Windows 10 64-bit: Home, Pro, Enterprise, or Education, version 1903 (Build 18362 or higher).
+- Windows 10 64-bit: Home or Pro 2004 (build 19041) or higher, or Enterprise or Education 1909 (build 18363) or higher.
 - Enable the WSL 2 feature on Windows. For detailed instructions, refer to the
     [Microsoft documentation](https://docs.microsoft.com/en-us/windows/wsl/install-win10){: target="_blank" rel="noopener" class="_"}.
 - The following hardware prerequisites are required to successfully run
@@ -44,7 +49,7 @@ WSL 2 on Windows 10:
 
 ### Hyper-V backend and Windows containers
 
-- Windows 10 64-bit: Pro, Enterprise, or Education (Build 17134 or higher).
+- Windows 10 64-bit: Pro 2004 (build 19041) or higher, or Enterprise or Education 1909 (build 18363) or higher.
 
   For Windows 10 Home, see [System requirements for WSL 2 backend](#system-requirements-for-wsl-2-backend).
 - Hyper-V and Containers Windows features must be enabled.
@@ -62,13 +67,13 @@ Hyper-V on Windows 10:
 
 > **Note**
 >
-> Docker supports Docker Desktop on Windows for those versions of Windows 10 that are still within [Microsoft’s servicing timeline](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet){:target="_blank" rel="noopener" class="_"}.
+> Docker only supports Docker Desktop on Windows for those versions of Windows 10 that are still within [Microsoft’s servicing timeline](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet){:target="_blank" rel="noopener" class="_"}.
 
 ### What's included in the installer
 
 The Docker Desktop installation includes [Docker Engine](../engine/index.md),
 Docker CLI client, [Docker Compose](../compose/index.md),
-[Notary](../notary/getting_started.md),
+[Docker Content Trust](../engine/security/trust.md),
 [Kubernetes](https://github.com/kubernetes/kubernetes/),
 and [Credential Helper](https://github.com/docker/docker-credential-helpers/).
 
@@ -123,21 +128,19 @@ When the whale icon in the status bar stays steady, Docker Desktop is up-and-run
 If the whale icon is hidden in the Notifications area, click the up arrow on the
 taskbar to show it. To learn more, see [Docker Settings](index.md#docker-settings-dialog).
 
-When the initialization is complete, Docker Desktop launches the onboarding tutorial. The tutorial includes a simple exercise to build an example Docker image, run it as a container, push and save the image to Docker Hub.
+## Quick Start Guide
+
+When the initialization is complete, Docker Desktop launches the **Quick Start Guide**. This tutorial includes a simple exercise to build an example Docker image, run it as a container, push and save the image to Docker Hub.
+
+To run the Quick Start Guide on demand, right-click the Docker icon in the Notifications area (or System tray) to open the Docker Desktop menu and then select **Quick Start Guide**.
 
 ![Docker Quick Start tutorial](images/docker-tutorial-win.png){:width="450px"}
 
 Congratulations! You are now successfully running Docker Desktop on Windows.
 
-If you would like to rerun the tutorial, go to the Docker Desktop menu and select **Learn**.
+## Updates
 
-## Automatic updates
-
-Starting with Docker Desktop 3.0.0, updates to Docker Desktop will be available automatically as delta updates from the previous version.
-
-When an update is available, Docker Desktop displays an icon to indicate the availability of a newer version. Whenever convenient, you can start the download of the update in the background.
-
-When the download finishes, all you need to do is to click **Update and restart** from the Docker menu. This installs the latest update and restarts Docker Desktop for the changes to take effect.
+{% include desktop-update.md %}
 
 ## Uninstall Docker Desktop
 

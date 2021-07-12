@@ -18,7 +18,7 @@ changes won't be seen in another container, _even if_ they are using the same im
 To see this in action, we're going to start two containers and create a file in each.
 What you'll see is that the files created in one container aren't available in another.
 
-1. Start a `ubuntu` container that will create a file named `/data.txt` with a random number
+1. Start an `ubuntu` container that will create a file named `/data.txt` with a random number
    between 1 and 10000.
 
     ```bash
@@ -58,7 +58,7 @@ What you'll see is that the files created in one container aren't available in a
     And look! There's no `data.txt` file there! That's because it was written to the scratch space for
     only the first container.
 
-4. Go ahead and remove the first container using the `docker rm -f` command.
+4. Go ahead and remove the first container using the `docker rm -f <container-id>` command.
 
 ## Container volumes
 
@@ -95,7 +95,7 @@ Every time you use the volume, Docker will make sure the correct data is provide
     docker volume create todo-db
     ```
 
-2. Stop the todo app container once again in the Dashboard (or with `docker rm -f <id>`), as it is still running without using the persistent volume.
+2. Stop and remove the todo app container once again in the Dashboard (or with `docker rm -f <id>`), as it is still running without using the persistent volume.
 
 3. Start the todo app container, but add the `-v` flag to specify a volume mount. We will use the named volume and mount
    it to `/etc/todos`, which will capture all files created at the path.
@@ -109,7 +109,7 @@ Every time you use the volume, Docker will make sure the correct data is provide
     ![Items added to todo list](images/items-added.png){: style="width: 55%; " }
     {: .text-center }
 
-5. Remove the container for the todo app. Use the Dashboard or `docker ps` to get the ID and then `docker rm -f <id>` to remove it.
+5. Stop and remove the container for the todo app. Use the Dashboard or `docker ps` to get the ID and then `docker rm -f <id>` to remove it.
 
 6. Start a new container using the same command from above.
 
